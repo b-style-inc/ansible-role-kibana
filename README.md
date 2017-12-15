@@ -12,7 +12,9 @@ None.
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    kibana_version: "4.6"
+    kibana_version: "6.1"
+
+取り急ぎ6.1対応しました。マイナーバージョンは勝手に更新するかも。
 
 The version of kibana to install (major and minor only).
 
