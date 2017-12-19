@@ -1,20 +1,25 @@
 ---
 - include: setup-RedHat.yml
+  become: yes
   when: ansible_os_family == 'RedHat'
 
 - include: setup-Debian.yml
+  become: yes
   when: ansible_os_family == 'Debian'
 
 - name: Install Kibana.
+  become: yes
   package: name=kibana state=present
 
 - name: Ensure Kibana is started and enabled at boot.
+  become: yes
   service:
     name: kibana
     state: started
     enabled: yes
 
 - name: Copy Kibana configuration.
+  become: yes
   template:
     src: kibana.yml.j2
     dest: "/etc/kibana/kibana.yml"
